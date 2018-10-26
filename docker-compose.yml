@@ -1,0 +1,14 @@
+version: "2.0"
+services:
+  get-on-db:
+    image: mariadb:10.3
+    volumes:
+      - dns-mapping-data:/var/lib/mysql
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+    ports:
+      - "4000:3306"
+
+volumes:
+  dns-mapping-data:
+  redis-data:
